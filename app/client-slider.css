@@ -1,0 +1,41 @@
+.clients-swiper {
+  padding-bottom: 50px !important;
+}
+
+.clients-swiper .swiper-pagination {
+  bottom: 0 !important;
+}
+
+.clients-swiper .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: #e2e8f0;
+  opacity: 1;
+  margin: 0 4px !important;
+  transition: all 0.3s ease;
+}
+
+.clients-swiper .swiper-pagination-bullet-active {
+  background: #ffd700;
+  width: 24px;
+  border-radius: 6px;
+}
+
+.clients-swiper .swiper-slide {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.clients-swiper .swiper-slide-active {
+  opacity: 1;
+}
+
+/* Hover effect for client logos */
+.clients-swiper img {
+  filter: grayscale(100%);
+  transition: all 0.3s ease;
+}
+
+.clients-swiper img:hover {
+  filter: grayscale(0%);
+}
