@@ -32,26 +32,26 @@ const clients = [
     // First Row - Slide 2
     { name: "Brand 13", logo: "/13.png" },
     { name: "Brand 14", logo: "/14.png" },
-    { name: "Brand 15", logo: "/logos/brand15.png" },
-    { name: "Brand 16", logo: "/logos/brand16.png" },
-    { name: "Brand 17", logo: "/logos/brand17.png" },
-    { name: "Brand 18", logo: "/logos/brand18.png" },
+    { name: "Brand 15", logo: "/24.png" },
+    { name: "Brand 16", logo: "/27.png" },
+    { name: "Brand 17", logo: "/28.png" },
+    { name: "Brand 18", logo: "/29.png" },
     // Second Row - Slide 2
-    { name: "Brand 19", logo: "/logos/brand19.png" },
-    { name: "Brand 20", logo: "/logos/brand20.png" },
-    { name: "Brand 21", logo: "/logos/brand21.png" },
-    { name: "Brand 22", logo: "/logos/brand22.png" },
-    { name: "Brand 23", logo: "/logos/brand23.png" },
-    { name: "Brand 24", logo: "/logos/brand24.png" },
+    { name: "Brand 19", logo: "/30.png" },
+    { name: "Brand 20", logo: "/31.png" },
+    { name: "Brand 21", logo: "/32.png" },
+    { name: "Brand 22", logo: "/33.png" },
+    { name: "Brand 23", logo: "/34.png" },
+    { name: "Brand 24", logo: "/35.png" },
   ],
 ];
 
 export function ClientSlider() {
   return (
-    <section className="py-20 bg-white">
+    <section className=" bg-white">
       <MaxWidthWrapper className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-[#1E2756] text-2xl font-semibold mb-4">OUR CLIENTS</h2>
+          <h2 className="text-[#1E2756] leading-relaxed text-2xl font-semibold mb-4">OUR CLIENTS</h2>
           <h3 className="text-4xl font-bold">
             <span className="text-yellow-400">Brands</span> we are proud to work with
           </h3>
@@ -80,7 +80,7 @@ export function ClientSlider() {
                 {slideClients.slice(0, 6).map((client, index) => (
                   <div
                     key={`${slideIndex}-${index}`}
-                    className="flex items-center w-20 h-20 relative justify-center p-4 hover:scale-105 transition-transform"
+                    className="flex items-center w-24 h-24 relative justify-center p-4 hover:scale-105 transition-transform"
                   >
                     <Image
                       src={client.logo || "/placeholder.svg"}
@@ -96,7 +96,7 @@ export function ClientSlider() {
                 {slideClients.slice(6, 12).map((client, index) => (
                   <div
                     key={`${slideIndex}-${index}`}
-                    className="flex items-center w-20 h-20 relative justify-center p-4 hover:scale-105 transition-transform"
+                    className="flex items-center w-24 h-24 relative justify-center p-4 hover:scale-105 transition-transform"
                   >
                     <Image
                       src={client.logo || "/placeholder.svg"}

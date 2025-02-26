@@ -15,7 +15,7 @@ const services = [
 
 export function ServicesSection() {
   return (
-    <section className="bg-[#1E2756] py-20">
+    <section className="bg-[#1E2756] ">
       <MaxWidthWrapper className="container mx-auto px-4 text-center">
         <motion.span
           initial={{ opacity: 0, y: 20 }}

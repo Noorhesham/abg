@@ -1,34 +1,17 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import { ChevronDown } from "lucide-react"
-import { cn } from "@/lib/utils"
-import MaxWidthWrapper from "./MaxWidthWrapper"
-
-const menuItems = [
-  { label: "Home", href: "/" },
-  { label: "Who Are We", href: "/about" },
-  {
-    label: "Services",
-    href: "/services",
-    submenu: [
-      { label: "Digital Marketing", href: "/services/digital-marketing" },
-      { label: "Web Development", href: "/services/web-development" },
-      { label: "Mobile Apps", href: "/services/mobile-apps" },
-    ],
-  },
-  { label: "Food Code", href: "/food-code" },
-  { label: "Portfolio", href: "/portfolio" },
-  { label: "Careers", href: "/careers" },
-  { label: "Our Clients", href: "/clients" },
-]
+import { useState } from "react";
+import Link from "next/link";
+import { ChevronDown } from "lucide-react";
+import { cn } from "@/lib/utils";
+import MaxWidthWrapper from "./MaxWidthWrapper";
+import { menuItems } from "./NavContainer";
 
 export function NavMain() {
-  const [activeMenu, setActiveMenu] = useState<string | null>(null)
+  const [activeMenu, setActiveMenu] = useState<string | null>(null);
 
   return (
-    <nav className="bg-white py-4 shadow-sm">
+    <nav className="bg-white border-input border-b py-4 shadow-sm">
       <MaxWidthWrapper noPadding className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <Link href="/" className="flex-shrink-0">
@@ -47,7 +30,7 @@ export function NavMain() {
                   href={item.href}
                   className={cn(
                     "text-gray-700 hover:text-blue-600 flex items-center space-x-1",
-                    activeMenu === item.label && "text-blue-600",
+                    activeMenu === item.label && "text-blue-600"
                   )}
                 >
                   <span>{item.label}</span>
@@ -77,6 +60,5 @@ export function NavMain() {
         </div>
       </MaxWidthWrapper>
     </nav>
-  )
+  );
 }
-

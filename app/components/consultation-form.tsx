@@ -19,16 +19,17 @@ export function ConsultationForm() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-yellow-400">GET FREE CONSULTATION</h2>
 
-      <form onSubmit={handleSubmit} className="flex space-x-2">
-        <div className="flex-shrink-0">
+      <form onSubmit={handleSubmit} className="flex lg:flex-row flex-col  gap-2">
+      <div className="flex  items-start">
+      <div className="flex-shrink-0">
           <select
             value={countryCode}
             onChange={(e) => setCountryCode(e.target.value)}
             className="h-12 px-3 rounded-l bg-white/10 text-white border-r border-gray-600 focus:outline-none"
           >
-            <option value="+20">+20</option>
-            <option value="+1">+1</option>
-            <option value="+44">+44</option>
+            <option className=" text-black" value="+20">+20</option>
+            <option className=" text-black" value="+1">+1</option>
+            <option className=" text-black" value="+44">+44</option>
           </select>
         </div>
 
@@ -40,6 +41,7 @@ export function ConsultationForm() {
           className="flex-1 h-12 px-4 bg-white/10 text-white placeholder-gray-400 focus:outline-none"
         />
 
+      </div>
         <button
           type="submit"
           className="h-12 px-6 bg-blue-500 text-white rounded-r flex items-center space-x-2 hover:bg-blue-600 transition-colors"
