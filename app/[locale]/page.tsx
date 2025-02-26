@@ -18,8 +18,14 @@ import {
   Share2,
   Target,
   TrendingUp,
+  LucideShieldQuestion,
+  Code2,
+  MegaphoneIcon,
 } from "lucide-react";
 import { ContactForm } from "../components/Contact";
+import { SectionDivider } from "../components/SectionDivider";
+import { BusinessConsultant } from "../components/Business";
+import Counter from "../components/Counter";
 
 const softwareServices = [
   { icon: <Smartphone />, label: "Mobile Development" },
@@ -31,19 +37,17 @@ const softwareServices = [
 ];
 
 const marketingServices = [
-  { icon: <Megaphone />, label: "Digital Marketing" },
-  { icon: <Share2 />, label: "Social Media" },
-  { icon: <Target />, label: "Brand Strategy" },
-  { icon: <Palette />, label: "Content Creation" },
-  { icon: <TrendingUp />, label: "Growth Marketing" },
-  { icon: <Brain />, label: "Market Analysis" },
+  { icon: <Megaphone />, label: "RepIn (S.F.A)" },
+  { icon: <Share2 />, label: " Shipping" },
+  { icon: <Target />, label: "Affliate" },
+  { icon: <Palette />, label: "CRM" },
 ];
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#1E2756]">
       <div></div>
-      <main className="container relative mx-auto py-5">
+      <main className="container relative mx-auto py-10">
         {" "}
         <div className=" w-80 absolute top-0 right-0  h-80 ">
           <Image alt="" src={"/hader.png"} className="w object-cover" fill />
@@ -87,7 +91,7 @@ export default function Home() {
         services={softwareServices}
       />
       <ProjectsSection
-        title="Software Projects"
+        title="SAAS Products"
         projects={[
           {
             id: 1,
@@ -122,17 +126,29 @@ export default function Home() {
           },
         ]}
       />
-
+      <SectionDivider
+        title="Explore our"
+        highlightedText="Software Solutions"
+        description="We build cutting-edge software solutions that help businesses transform their digital presence and streamline operations."
+        Icon={<Code2 />}
+      />
       <ServicesSection
-        title="Marketing Solutions"
+        title="SAAS Products"
         subtitle="MARKETING"
-        description="Transform your brand's digital presence with our innovative marketing strategies and solutions."
+        description="Bring your business to customers within arm’s reach. We create mobile apps with the
+          latest
+          technologies."
         services={marketingServices}
         bgColor="bg-[#162042]"
       />
-
+      <SectionDivider
+        title="Discover our"
+        highlightedText="SAAS Products"
+        description="Powerful software-as-a-service solutions designed to enhance your business efficiency and growth."
+        Icon={<MegaphoneIcon />}
+      />
       <ProjectsSection
-        title="Marketing Projects"
+        title="SAAS Products"
         projects={[
           {
             id: 1,
@@ -168,6 +184,18 @@ export default function Home() {
         bgColor="bg-[#162042]"
         buttonText="View Marketing Portfolio"
       />
+      <section className=" bg-white">
+        <MaxWidthWrapper className="flex flex-col gap-4 items-center">
+          <h2 className=" text-yellow-400 font-semibold text-3xl">SERVICES</h2>
+          <h3 className=" text-black font-semibold text-4xl">Food Code Community</h3>
+          <p className=" text-lg">
+            Reach to 320K of our Facebook page follows and engage with a community of 6.5M member in our Facebook group
+          </p>
+          <img src="/food-cod (1).png" className=" w-full h-[34rem] object-contain" alt="" />
+          <Counter />
+        </MaxWidthWrapper>
+      </section>
+      <BusinessConsultant />
       <ContactForm />
     </div>
   );

@@ -15,7 +15,7 @@ export function NavMain() {
       <MaxWidthWrapper noPadding className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <Link href="/" className="flex-shrink-0">
-            <img src="/logo.svg" alt="ABG" className="h-12" />
+            <img src="/abglogo.svg" alt="ABG" className="h-12" />
           </Link>
 
           <div className="flex items-center space-x-8">
