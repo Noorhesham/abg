@@ -3,11 +3,11 @@
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 import MaxWidthWrapper from "./MaxWidthWrapper";
+import { useTranslations } from "next-intl";
 
 interface Project {
   id: number;
-  title: string;
-  description: string;
+  key: string;
   video: string;
 }
 
@@ -22,37 +22,27 @@ interface ProjectsSectionProps {
 const projects = [
   {
     id: 1,
-    title: "Egyptian basketball ",
-    description: `Follow the latest Egyptian basketball news through the "Egyptian Basketball Federation" application
-                    With comprehensive and exclusive coverage 24 hours a day Federation app.`,
+    key: "basketball",
     video: "/basketball website & app.mp4",
   },
   {
     id: 2,
-    title: `DELIVERTTO APP`,
-    description: `Delivertto is the first app of its kind in Delta and soon across the Republic The best offers from
-                    the supermarket in your area Save yourself time and effort.`,
+    key: "delivertto",
     video: "/delivretto.mp4",
   },
   {
     id: 3,
-    title: "El-shawa website",
-    description: `El-shawa website is an online marketplace where you can find all home needs and your needs in one
-                    place to order whatever you like from a wide range of kitchen sets and clothes and other stuff .`,
+    key: "elshawa",
     video: "/shawwa.mp4",
   },
   {
     id: 4,
-    title: "UG medical",
-    description: `Online marketplace for specialized biochemical materials for laboratory and laboratory equipment.
-                    This application is the number 1 platform in Egypt for purchasing medical elevators.`,
+    key: "ugmedical",
     video: "/ug website and mobile app.mp4",
   },
   {
     id: 5,
-    title: "Zagel App",
-    description: `Bring your business to customers within arm’s reach. We create mobile apps with the latest
-                    technologies.`,
+    key: "zagel",
     video: "/zajel 00.mp4",
   },
 ];
@@ -61,27 +51,31 @@ const VideoCard = ({
   project,
   className,
 }: {
-  project: { id: number; title: string; description: string; video: string };
+  project: { id: number; key: string; video: string };
   className?: string;
 }) => {
+  const t = useTranslations("projects.items");
+
   return (
     <div className={` ${className} relative rounded-2xl overflow-hidden aspect-video w-full h-44 group`}>
       <video src={project.video} loop muted autoPlay className="w-full h-full object-cover absolute inset-0"></video>
       <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 duration-200 group-hover:opacity-100 transition-opacity flex flex-col justify-center items-center text-white p-4">
-        <h3 className="text-lg font-bold">{project.title}</h3>
-        <p className="text-sm text-center">{project.description}</p>
+        <h3 className="text-lg font-bold">{t(`${project.key}.title`)}</h3>
+        <p className="text-sm text-center">{t(`${project.key}.description`)}</p>
       </div>
     </div>
   );
 };
 
 export function ProjectsSection({
-  title = "Our Projects",
+  title,
   projects,
   className = "",
   bgColor = "bg-[#1E2756]",
-  buttonText = "Explore more"
+  buttonText,
 }: ProjectsSectionProps) {
+  const t = useTranslations("projects");
+
   return (
     <section className={`${bgColor} ${className}`}>
       <MaxWidthWrapper className="container mx-auto px-4">
@@ -92,7 +86,7 @@ export function ProjectsSection({
             whileInView={{ opacity: 1, y: 0 }}
             className="text-4xl font-bold text-white text-center"
           >
-            {title}
+            {title || t("title")}
           </motion.h2>
           <div className="h-[1px] bg-gray-700 flex-1" />
         </div>
@@ -117,7 +111,7 @@ export function ProjectsSection({
             whileInView={{ opacity: 1, y: 0 }}
             className="inline-flex items-center gap-2 px-6 py-3 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors duration-300"
           >
-            {buttonText}
+            {buttonText || t("button")}
             <ChevronRight className="w-4 h-4" />
           </motion.button>
         </div>

@@ -66,6 +66,7 @@
     }
   },
   "projects": {
+    "button": "استكشف المزيد",
     "software": {
       "basketball": {
         "title": "كرة السلة المصرية",

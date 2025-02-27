@@ -68,48 +68,28 @@
     }
   },
   "projects": {
-    "software": {
+    "title": "Our Projects",
+    "button": "Explore more",
+    "items": {
       "basketball": {
         "title": "Egyptian basketball",
-        "description": "Follow the latest Egyptian basketball news through the 'Egyptian Basketball Federation' application"
+        "description": "Follow the latest Egyptian basketball news through the \"Egyptian Basketball Federation\" application With comprehensive and exclusive coverage 24 hours a day Federation app."
       },
       "delivertto": {
         "title": "DELIVERTTO APP",
-        "description": "Delivertto is the first app of its kind in Delta and soon across the Republic"
+        "description": "Delivertto is the first app of its kind in Delta and soon across the Republic The best offers from the supermarket in your area Save yourself time and effort."
       },
       "elshawa": {
         "title": "El-shawa website",
-        "description": "El-shawa website is an online marketplace where you can find all home needs"
+        "description": "El-shawa website is an online marketplace where you can find all home needs and your needs in one place to order whatever you like from a wide range of kitchen sets and clothes and other stuff."
       },
       "ugmedical": {
         "title": "UG medical",
-        "description": "Online marketplace for specialized biochemical materials"
+        "description": "Online marketplace for specialized biochemical materials for laboratory and laboratory equipment. This application is the number 1 platform in Egypt for purchasing medical elevators."
       },
       "zagel": {
         "title": "Zagel App",
-        "description": "Bring your business to customers within arm's reach"
-      }
-    },
-    "marketing": {
-      "basketball": {
-        "title": "Egyptian basketball",
-        "description": "Digital marketing campaign for Egyptian Basketball Federation"
-      },
-      "delivertto": {
-        "title": "DELIVERTTO APP",
-        "description": "Social media marketing and brand awareness campaign"
-      },
-      "elshawa": {
-        "title": "El-shawa website",
-        "description": "Complete digital marketing solution for e-commerce platform"
-      },
-      "ugmedical": {
-        "title": "UG medical",
-        "description": "B2B marketing strategy and implementation"
-      },
-      "zagel": {
-        "title": "Zagel App",
-        "description": "App store optimization and user acquisition campaign"
+        "description": "Bring your business to customers within arm's reach. We create mobile apps with the latest technologies."
       }
     }
   },
@@ -247,50 +227,6 @@
         "label": "Group members",
         "suffix": "M"
       }
-    }
-  },
-  "contact": {
-    "title": "Contact US",
-    "info": {
-      "headOffice": {
-        "label": "Head Office",
-        "value": "134 Villa, Abdelrahman taj st, Elbanafseg 7, New Cairo, Egypt"
-      },
-      "phone": {
-        "label": "Call Us Directly",
-        "value": "(20)1019850500"
-      },
-      "email": {
-        "label": "Email Us",
-        "value": "info@abgegypt.com"
-      }
-    },
-    "form": {
-      "fullName": {
-        "label": "Full Name",
-        "placeholder": "John Doe"
-      },
-      "email": {
-        "label": "Email Address",
-        "placeholder": "john@example.com"
-      },
-      "message": {
-        "label": "Message",
-        "placeholder": "Write your message here..."
-      },
-      "button": {
-        "send": "Send message",
-        "sending": "Sending..."
-      }
-    },
-    "toast": {
-      "success": "Message sent successfully!",
-      "error": "Failed to send message. Please try again."
-    },
-    "validation": {
-      "name": "Name must be at least 2 characters",
-      "email": "Please enter a valid email address",
-      "message": "Message must be at least 10 characters"
     }
   }
 }

@@ -1,13 +1,16 @@
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from 'lucide-react';
+import { Menu, X } from "lucide-react";
 import React from "react";
 import { useState } from "react";
 import { menuItems } from "./NavContainer";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
 
 const PhoneNav = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const t = useTranslations();
+
   return (
     <div>
       <Menu className="w-8 h-8 text-blue-400 hover:text-blue-200 duration-200" onClick={() => setIsOpen(true)} />
@@ -28,7 +31,7 @@ const PhoneNav = () => {
             >
               <X className="w-8 h-8 text-white hover:text-blue-200 duration-200" />
             </motion.button>
-            <motion.ul 
+            <motion.ul
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 20, opacity: 0 }}
@@ -36,7 +39,7 @@ const PhoneNav = () => {
               className="flex flex-col items-center justify-center h-full gap-8"
             >
               {menuItems.map((item, index) => (
-                <motion.li 
+                <motion.li
                   key={item.label}
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
@@ -48,7 +51,7 @@ const PhoneNav = () => {
                     className="text-2xl text-white font-semibold hover:text-blue-200 transition-colors"
                     onClick={() => setIsOpen(false)}
                   >
-                    {item.label}
+                    {t(`nav.${item.label}`)}
                   </Link>
                 </motion.li>
               ))}
