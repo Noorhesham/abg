@@ -26,6 +26,7 @@ import { ContactForm } from "../components/Contact";
 import { SectionDivider } from "../components/SectionDivider";
 import { BusinessConsultant } from "../components/Business";
 import Counter from "../components/Counter";
+import { getTranslations } from "next-intl/server";
 
 const softwareServices = [
   { icon: <Smartphone />, label: "Mobile Development" },
@@ -43,7 +44,8 @@ const marketingServices = [
   { icon: <Palette />, label: "CRM" },
 ];
 
-export default function Home() {
+export default async function Home() {
+  const t = await getTranslations();
   return (
     <div className="min-h-screen bg-[#1E2756]">
       <div></div>

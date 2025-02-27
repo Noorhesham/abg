@@ -10,11 +10,11 @@ export const menuItems = [
   { label: "Who Are We", href: "/about" },
   {
     label: "Services",
-    href: "/services",
+    href: "/software",
     submenu: [
-      { label: "Digital Marketing", href: "/services/digital-marketing" },
-      { label: "Web Development", href: "/services/web-development" },
-      { label: "Mobile Apps", href: "/services/mobile-apps" },
+      { label: "Digital Marketing", href: "/software#digital-marketing" },
+      { label: "Web Development", href: "/software#web-development" },
+      { label: "Mobile Apps", href: "/software#mobile-apps" },
     ],
   },
   { label: "Food Code", href: "/food-code" },

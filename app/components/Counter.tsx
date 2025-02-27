@@ -5,7 +5,7 @@ const stats = [
   { value: 6.5, label: "Group members", suffix: "M", color: "bg-transparent" },
 ];
 import { motion } from "framer-motion";
-const Counter = () => {
+const Counter = ({ className }: any) => {
   const [isVisible, setIsVisible] = useState(false);
   const [counts, setCounts] = useState(stats.map(() => 0));
 
@@ -35,19 +35,19 @@ const Counter = () => {
         whileInView={{ opacity: 1, y: 0 }}
         onViewportEnter={() => setIsVisible(true)}
         viewport={{ once: true }}
-        className="container mx-auto px-4 py-16 text-center"
+        className={` ${className} text-black container mx-auto px-4 py-16 text-center`}
       >
         <div className="inline-flex items-stretch gap-8">
           {stats.map((stat, index) => (
             <div key={stat.label} className="flex flex-col items-center">
               <div className={`px-4 py-2 ${stat.color} rounded-lg`}>
-                <span className="text-4xl font-bold text-black">
+                <span className="text-4xl font-bold ">
                   +{counts[index].toFixed(stat.value % 1 === 0 ? 0 : 1)}
                   {stat.suffix}
                 </span>
               </div>
               {index < stats.length - 1 && <div className="h-12 w-px bg-white/20 mx-8" />}
-              <div className="text-lg mt-auto text-black">{stat.label}</div>
+              <div className="text-lg mt-auto ">{stat.label}</div>
             </div>
           ))}
         </div>

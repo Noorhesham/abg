@@ -1,3 +1,42 @@
 {
-    "hello":"اهلا"
+  "ServicesPage": {
+    "pageTitle": "شركة برمجيات",
+    "services": "الخدمات",
+    "cta": {
+      "title": "لست متأكدًا من أين تبدأ؟",
+      "subtitle": "اسأل الخبراء"
+    },
+    "sections": [
+      {
+        "title": "تطوير المواقع",
+        "description": "الموقع الجيد ليس جميل المظهر فحسب، بل سهل الاستخدام وبديهي أيضًا...",
+        "imageSrc": "/websit.png"
+      },
+      {
+        "title": "تطبيقات الجوال",
+        "description": "نظاما أندرويد من جوجل وآي أو إس من أبل هما النظامان الرئيسيان في عالم التقنية المتنقلة...",
+        "imageSrc": "/mobil-develemnt.png"
+      },
+      {
+        "title": "تجربة المستخدم",
+        "description": "نعتبر واجهة المستخدم وتجربته عنصرًا حاسمًا في تطبيقاتكم...",
+        "imageSrc": "/Image-ui-ux.png"
+      },
+      {
+        "title": "الذكاء الاصطناعي",
+        "description": "لا تقتصر قدرات الذكاء الاصطناعي على الأمور الخيالية...",
+        "imageSrc": "/shutterstock.png"
+      },
+      {
+        "title": "الاختبارات",
+        "description": "ضمان الجودة عبر اختبارات شاملة...",
+        "imageSrc": "/developers-looking.png"
+      },
+      {
+        "title": "تحليل البيانات",
+        "description": "فريق تحليل البيانات لدينا جاهز للدمج...",
+        "imageSrc": "/data-Analysis.png"
+      }
+    ]
+  }
 }

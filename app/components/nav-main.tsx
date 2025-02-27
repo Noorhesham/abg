@@ -1,14 +1,21 @@
 "use client";
-
-import { useState } from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import MaxWidthWrapper from "./MaxWidthWrapper";
 import { menuItems } from "./NavContainer";
+import { usePathname } from "next/navigation";
+
+// استيراد مكونات القائمة المنسدلة من shadcn
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export function NavMain() {
-  const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const pathname = usePathname();
 
   return (
     <nav className="bg-white border-input border-b py-4 shadow-sm">
@@ -19,39 +26,49 @@ export function NavMain() {
           </Link>
 
           <div className="flex items-center space-x-8">
-            {menuItems.map((item) => (
-              <div
-                key={item.label}
-                className="relative"
-                onMouseEnter={() => setActiveMenu(item.label)}
-                onMouseLeave={() => setActiveMenu(null)}
-              >
-                <Link
-                  href={item.href}
-                  className={cn(
-                    "text-gray-700 hover:text-blue-600 flex items-center space-x-1",
-                    activeMenu === item.label && "text-blue-600"
-                  )}
-                >
-                  <span>{item.label}</span>
-                  {item.submenu && <ChevronDown className="w-4 h-4" />}
-                </Link>
+            {menuItems.map((item) => {
+              const isActiveRoute = pathname === item.href;
+              // إذا لم يحتوي العنصر على submenu، نعرض الرابط مباشرةً
+              if (!item.submenu) {
+                return (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    className={cn(
+                      "text-gray-700 hover:text-blue-600 flex items-center space-x-1",
+                      isActiveRoute && "text-yellow-500"
+                    )}
+                  >
+                    <span>{item.label}</span>
+                  </Link>
+                );
+              }
 
-                {item.submenu && activeMenu === item.label && (
-                  <div className="absolute top-full left-0 w-48 bg-white shadow-lg rounded-md py-2 mt-2">
+              // إذا كان هناك submenu، نستخدم القائمة المنسدلة من shadcn
+              return (
+                <DropdownMenu key={item.label}>
+                  <DropdownMenuTrigger asChild>
+                    <Link
+                      href={item.href}
+                      className={cn(
+                        "text-gray-700 hover:text-blue-600 flex items-center space-x-1",
+                        isActiveRoute && "text-yellow-500"
+                      )}
+                    >
+                      <span>{item.label}</span>
+                      <ChevronDown className="w-4 h-4" />
+                    </Link>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent className="w-48">
                     {item.submenu.map((subitem) => (
-                      <Link
-                        key={subitem.label}
-                        href={subitem.href}
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                      >
-                        {subitem.label}
-                      </Link>
+                      <DropdownMenuItem key={subitem.label} asChild>
+                        <Link href={subitem.href}>{subitem.label}</Link>
+                      </DropdownMenuItem>
                     ))}
-                  </div>
-                )}
-              </div>
-            ))}
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              );
+            })}
 
             <button className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-colors">
               Contact Us

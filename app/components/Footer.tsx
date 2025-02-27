@@ -4,12 +4,12 @@ import type React from "react";
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { Clock, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import MaxWidthWrapper from "./MaxWidthWrapper";
+import { Link } from "@/i18n/routing";
 
 const siteMap = {
   "Main Links": [

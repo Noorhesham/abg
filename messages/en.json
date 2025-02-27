@@ -1,3 +1,42 @@
 {
-  "hello": "اهلا"
+  "ServicesPage": {
+    "pageTitle": "Software House",
+    "services": "SERVICES",
+    "cta": {
+      "title": "Not Sure Where To Start?",
+      "subtitle": "Ask Experts"
+    },
+    "sections": [
+      {
+        "title": "Website Development",
+        "description": "A good website is one that is not only pleasing to look at, but also easy and intuitive to use. At ABG we make sure website designing services will prove to be quite useful towards the growth and improvement of your business or organization...",
+        "imageSrc": "/websit.png"
+      },
+      {
+        "title": "Mobile Development",
+        "description": "Google’s Android and Apple’s iOS operating systems are the two primarily in mobile tech...",
+        "imageSrc": "/mobil-develemnt.png"
+      },
+      {
+        "title": "UX/UI",
+        "description": "We consider UI/UX as a very crucial aspect of your mobile application...",
+        "imageSrc": "/Image-ui-ux.png"
+      },
+      {
+        "title": "AI/BI",
+        "description": "Not only is AI capable of doing all those fantastic science-fiction things...",
+        "imageSrc": "/shutterstock.png"
+      },
+      {
+        "title": "Testing",
+        "description": "Our comprehensive testing ensures...",
+        "imageSrc": "/developers-looking.png"
+      },
+      {
+        "title": "Data Analysis",
+        "description": "Our team of data analysts are here to integrate...",
+        "imageSrc": "/data-Analysis.png"
+      }
+    ]
+  }
 }
