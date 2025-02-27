@@ -5,6 +5,8 @@ import { NavTop } from "../components/nav-top";
 import { NavMain } from "../components/nav-main";
 import useIsMobile from "../hooks/useIsMobile";
 import PhoneNav from "./PhoneNav";
+import { useTranslations } from "next-intl";
+
 export const menuItems = [
   { label: "Home", href: "/" },
   { label: "Who Are We", href: "/about" },
@@ -23,10 +25,15 @@ export const menuItems = [
   { label: "Our Clients", href: "/clients" },
 ];
 
+// Note: We don't translate the labels here because they are used as keys
+// for the translations in the nav-main component where the actual translation happens
+
 const NavContainer = () => {
   const [isScrolling, setIsScrolling] = useState(false);
   const [lastScrollPosition, setLastScrollPosition] = useState(0);
   const isMobile = useIsMobile();
+  const t = useTranslations();
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolling(lastScrollPosition < window.scrollY);
@@ -42,7 +49,7 @@ const NavContainer = () => {
 
   return (
     <div
-      className={`w-full z-50  fixed left-0 shadow-md top-0 transition-transform duration-200 ${
+      className={`w-full z-50 fixed left-0 shadow-md top-0 transition-transform duration-200 ${
         isScrolling ? "-translate-y-12" : "translate-y-0"
       }`}
     >

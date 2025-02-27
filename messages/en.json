@@ -1,4 +1,30 @@
 {
+  "nav": {
+    "Home": "Home",
+    "Who Are We": "Who Are We",
+    "Services": "Services",
+    "Food Code": "Food Code",
+    "Portfolio": "Portfolio",
+    "Careers": "Careers",
+    "Our Clients": "Our Clients",
+    "About": "About",
+    "Blog": "Blog",
+    "contactUs": "Contact Us",
+    "Career": "Career",
+    "Contact Us": "Contact Us",
+    "Solutions": "Solutions",
+    "Projects": "Projects",
+    "Who We Are": "Who We Are",
+    "submenu": {
+      "Services": {
+        "Digital Marketing": "Digital Marketing",
+        "Web Development": "Web Development",
+        "Mobile Apps": "Mobile Apps",
+        "UI/UX Design": "UI/UX Design"
+      }
+    }
+  },
+
   "hero": {
     "title": {
       "part1": "Take Your Brand To",
@@ -122,7 +148,7 @@
       },
       {
         "title": "Mobile Development",
-        "description": "Google’s Android and Apple’s iOS operating systems are the two primarily in mobile tech...",
+        "description": "Google's Android and Apple's iOS operating systems are the two primarily in mobile tech...",
         "imageSrc": "/mobil-develemnt.png"
       },
       {
@@ -146,5 +172,73 @@
         "imageSrc": "/data-Analysis.png"
       }
     ]
+  },
+  "consultation": {
+    "title": "GET FREE CONSULTATION",
+    "placeholder": "Type Mobile number",
+    "button": "Send Request",
+    "description": "Schedule Free call for 30 minutes with our business experts"
+  },
+  "business": {
+    "subtitle": "SERVICES",
+    "title": "Business Consultant",
+    "description": "For us, at A.B.G we believe in our customers and clients' succession and we make sure we reach this succession hand in hand. So one of our mission is to keep your business safe and to avoid any risks along the way by studying all your strengths and weakness points and providing you with studied strategies and professional advice for your moves in the market.",
+    "button": "Explore more"
+  },
+  "clients": {
+    "title": "OUR CLIENTS",
+    "subtitle": {
+      "part1": "Brands",
+      "part2": "we are proud to work with"
+    }
+  },
+  "footer": {
+    "company": {
+      "name": "Artificial Business Gate",
+      "description": "Think of us as a new prospective to reach new consumers and turning them into customers.",
+      "openingHours": {
+        "title": "Opening Hours",
+        "hours": "9 am - 5pm"
+      }
+    },
+    "mainLinks": "Main Links",
+    "ourServices": "Our Services",
+    "newsletter": {
+      "title": "Subscribe for newsletter",
+      "placeholder": "Enter your email",
+      "button": "Subscribe",
+      "subscribing": "Subscribing..."
+    },
+    "copyright": "© {year} Artificial Business Gate. All rights reserved.",
+    "links": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    },
+    "toast": {
+      "success": "Successfully subscribed to newsletter!",
+      "error": "Failed to subscribe. Please try again."
+    },
+    "nav": {
+      "Home": "Home",
+      "Who We Are": "Who We Are",
+      "Services": "Services",
+      "Portfolio": "Portfolio",
+      "Career": "Career",
+      "Contact Us": "Contact Us",
+      "Solutions": "Solutions",
+      "Projects": "Projects"
+    }
+  },
+  "counter": {
+    "stats": {
+      "pageFollowers": {
+        "label": "Page Followers",
+        "suffix": "k"
+      },
+      "groupMembers": {
+        "label": "Group members",
+        "suffix": "M"
+      }
+    }
   }
 }

@@ -5,8 +5,9 @@ import { cn } from "@/lib/utils";
 import MaxWidthWrapper from "./MaxWidthWrapper";
 import { menuItems } from "./NavContainer";
 import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 
-// استيراد مكونات القائمة المنسدلة من shadcn
+// Import dropdown menu components from shadcn
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -16,6 +17,7 @@ import {
 
 export function NavMain() {
   const pathname = usePathname();
+  const t = useTranslations();
 
   return (
     <nav className="bg-white border-input border-b py-4 shadow-sm">
@@ -28,7 +30,7 @@ export function NavMain() {
           <div className="flex items-center space-x-8">
             {menuItems.map((item) => {
               const isActiveRoute = pathname === item.href;
-              // إذا لم يحتوي العنصر على submenu، نعرض الرابط مباشرةً
+              // If item doesn't have submenu, render direct link
               if (!item.submenu) {
                 return (
                   <Link
@@ -36,15 +38,15 @@ export function NavMain() {
                     href={item.href}
                     className={cn(
                       "text-gray-700 hover:text-blue-600 flex items-center space-x-1",
-                      isActiveRoute && "text-yellow-500"
+                      isActiveRoute && "text-yellow-400 font-medium"
                     )}
                   >
-                    <span>{item.label}</span>
+                    <span>{t(`nav.${item.label}`)}</span>
                   </Link>
                 );
               }
 
-              // إذا كان هناك submenu، نستخدم القائمة المنسدلة من shadcn
+              // If item has submenu, use shadcn dropdown
               return (
                 <DropdownMenu key={item.label}>
                   <DropdownMenuTrigger asChild>
@@ -52,17 +54,22 @@ export function NavMain() {
                       href={item.href}
                       className={cn(
                         "text-gray-700 hover:text-blue-600 flex items-center space-x-1",
-                        isActiveRoute && "text-yellow-500"
+                        isActiveRoute && "text-yellow-400 font-medium"
                       )}
                     >
-                      <span>{item.label}</span>
+                      <span>{t(`nav.${item.label}`)}</span>
                       <ChevronDown className="w-4 h-4" />
                     </Link>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent className="w-48">
                     {item.submenu.map((subitem) => (
                       <DropdownMenuItem key={subitem.label} asChild>
-                        <Link href={subitem.href}>{subitem.label}</Link>
+                        <Link
+                          href={subitem.href}
+                          className={cn(pathname === subitem.href && "text-yellow-400 font-medium")}
+                        >
+                          {t(`nav.submenu.${item.label}.${subitem.label}`)}
+                        </Link>
                       </DropdownMenuItem>
                     ))}
                   </DropdownMenuContent>
@@ -70,9 +77,9 @@ export function NavMain() {
               );
             })}
 
-            <Link href={"/contact"}>
+            <Link href="/contact">
               <button className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-colors">
-                Contact Us
+                {t("nav.contactUs")}
               </button>
             </Link>
           </div>

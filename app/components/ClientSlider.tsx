@@ -5,6 +5,7 @@ import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/grid";
+import { useTranslations } from "next-intl";
 
 // Import custom styles
 import "../client-slider.css";
@@ -47,13 +48,15 @@ const clients = [
 ];
 
 export function ClientSlider() {
+  const t = useTranslations();
+
   return (
     <section className=" bg-white">
       <MaxWidthWrapper className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-[#1E2756] leading-relaxed text-2xl font-semibold mb-4">OUR CLIENTS</h2>
+          <h2 className="text-[#1E2756] leading-relaxed text-2xl font-semibold mb-4">{t("clients.title")}</h2>
           <h3 className="text-4xl font-bold">
-            <span className="text-yellow-400">Brands</span> we are proud to work with
+            <span className="text-yellow-400">{t("clients.subtitle.part1")}</span> {t("clients.subtitle.part2")}
           </h3>
         </div>
 

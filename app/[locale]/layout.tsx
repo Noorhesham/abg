@@ -41,7 +41,10 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <NextIntlClientProvider locale={locale} messages={messages} now={new Date()} timeZone="UTC">
-        <body className={`${locale === "ar" ? cairo.className : poppins.className} antialiased`}>
+        <body
+          className={`${locale === "ar" ? cairo.className : poppins.className}
+        ${locale === "ar" ? "rtl" : "ltr"} antialiased`}
+        >
           <NavContainer />
           <div className=" pt-12 lg:pt-32">{children}</div>
           <Footer />

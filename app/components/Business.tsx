@@ -2,12 +2,13 @@
 
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import MaxWidthWrapper from "./MaxWidthWrapper";
 
-
 export function BusinessConsultant() {
+  const t = useTranslations("business");
+
   return (
     <div className="relative bg-[#1E2756] overflow-hidden">
       {/* Stats Section */}
@@ -21,16 +22,11 @@ export function BusinessConsultant() {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <span className="text-yellow-400 font-semibold tracking-wider">SERVICES</span>
-            <h2 className="text-4xl font-bold text-white">Business Consultant</h2>
-            <p className="text-gray-400 leading-relaxed max-w-xl">
-              For us, at A.B.G we believe in our customers and clients&apos; succession and we make sure we reach this
-              succession hand in hand. So one of our mission is to keep your business safe and to avoid any risks along
-              the way by studying all your strengths and weakness points and providing you with studied strategies and
-              professional advice for your moves in the market.
-            </p>
+            <span className="text-yellow-400 font-semibold tracking-wider">{t("subtitle")}</span>
+            <h2 className="text-4xl font-bold text-white">{t("title")}</h2>
+            <p className="text-gray-400 leading-relaxed max-w-xl">{t("description")}</p>
             <Button variant="default" className="group bg-blue-600 hover:bg-blue-700">
-              Explore more
+              {t("button")}
               <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
           </motion.div>
@@ -61,11 +57,7 @@ export function BusinessConsultant() {
               viewport={{ once: true }}
               className="relative z-10"
             >
-              <img
-                src="/business (1).png"
-                alt="Business Consultant"
-                className="w-full h-96 object-contain"
-              />
+              <img src="/business (1).png" alt="Business Consultant" className="w-full h-96 object-contain" />
             </motion.div>
           </motion.div>
         </div>

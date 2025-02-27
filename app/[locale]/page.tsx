@@ -26,9 +26,12 @@ import { ContactForm } from "../components/Contact";
 import { SectionDivider } from "../components/SectionDivider";
 import { BusinessConsultant } from "../components/Business";
 import Counter from "../components/Counter";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
-export default async function Home() {
+export default async function Home({ params }: { params: { locale: string } }) {
+  const locale = await params;
+  unstable_setRequestLocale(locale);
+
   const t = await getTranslations();
 
   const softwareServices = [
