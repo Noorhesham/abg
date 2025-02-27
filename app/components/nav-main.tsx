@@ -70,9 +70,11 @@ export function NavMain() {
               );
             })}
 
-            <button className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-colors">
-              Contact Us
-            </button>
+            <Link href={"/contact"}>
+              <button className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-colors">
+                Contact Us
+              </button>
+            </Link>
           </div>
         </div>
       </MaxWidthWrapper>

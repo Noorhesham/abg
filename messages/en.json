@@ -1,4 +1,112 @@
 {
+  "hero": {
+    "title": {
+      "part1": "Take Your Brand To",
+      "part2": "The",
+      "highlight": "Next Level"
+    },
+    "description": "ABG is an acclaimed digital marketing, media production agency and powerhouse in software development with a reputation for both effective marketing strategies, solutions, the use of digitalization, and software development with headquarter in Cairo-Egypt."
+  },
+  "services": {
+    "software": {
+      "mobile": "Mobile Development",
+      "website": "Website Development",
+      "uiux": "UI/UX",
+      "aibi": "AI/BI",
+      "testing": "Testing",
+      "dataAnalysis": "Data Analysis"
+    },
+    "marketing": {
+      "repin": "RepIn (S.F.A)",
+      "shipping": "Shipping",
+      "affiliate": "Affiliate",
+      "crm": "CRM"
+    }
+  },
+  "sections": {
+    "software": {
+      "title": "Software Development",
+      "subtitle": "SERVICES",
+      "description": "Bring your business to customers within arm's reach. We create mobile apps with the latest technologies."
+    },
+    "softwareProjects": {
+      "title": "SAAS Products"
+    },
+    "saas": {
+      "title": "SAAS Products",
+      "subtitle": "MARKETING",
+      "description": "Bring your business to customers within arm's reach. We create mobile apps with the latest technologies."
+    },
+    "marketingProjects": {
+      "title": "SAAS Products"
+    }
+  },
+  "projects": {
+    "software": {
+      "basketball": {
+        "title": "Egyptian basketball",
+        "description": "Follow the latest Egyptian basketball news through the 'Egyptian Basketball Federation' application"
+      },
+      "delivertto": {
+        "title": "DELIVERTTO APP",
+        "description": "Delivertto is the first app of its kind in Delta and soon across the Republic"
+      },
+      "elshawa": {
+        "title": "El-shawa website",
+        "description": "El-shawa website is an online marketplace where you can find all home needs"
+      },
+      "ugmedical": {
+        "title": "UG medical",
+        "description": "Online marketplace for specialized biochemical materials"
+      },
+      "zagel": {
+        "title": "Zagel App",
+        "description": "Bring your business to customers within arm's reach"
+      }
+    },
+    "marketing": {
+      "basketball": {
+        "title": "Egyptian basketball",
+        "description": "Digital marketing campaign for Egyptian Basketball Federation"
+      },
+      "delivertto": {
+        "title": "DELIVERTTO APP",
+        "description": "Social media marketing and brand awareness campaign"
+      },
+      "elshawa": {
+        "title": "El-shawa website",
+        "description": "Complete digital marketing solution for e-commerce platform"
+      },
+      "ugmedical": {
+        "title": "UG medical",
+        "description": "B2B marketing strategy and implementation"
+      },
+      "zagel": {
+        "title": "Zagel App",
+        "description": "App store optimization and user acquisition campaign"
+      }
+    }
+  },
+  "divider": {
+    "software": {
+      "title": "Explore our",
+      "highlight": "Software Solutions",
+      "description": "We build cutting-edge software solutions that help businesses transform their digital presence and streamline operations."
+    },
+    "saas": {
+      "title": "Discover our",
+      "highlight": "SAAS Products",
+      "description": "Powerful software-as-a-service solutions designed to enhance your business efficiency and growth."
+    }
+  },
+  "foodCode": {
+    "subtitle": "SERVICES",
+    "title": "Food Code Community",
+    "description": "Reach to 320K of our Facebook page follows and engage with a community of 6.5M member in our Facebook group"
+  },
+  "buttons": {
+    "viewMarketingPortfolio": "View Marketing Portfolio"
+  },
   "ServicesPage": {
     "pageTitle": "Software House",
     "services": "SERVICES",

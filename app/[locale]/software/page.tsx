@@ -1,11 +1,13 @@
+"use client";
 // app/[locale]/services/page.tsx
 import MaxWidthWrapper from "@/app/components/MaxWidthWrapper";
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { AnimationWrapper } from "@/app/components/AnimationWrapper";
+import { useTranslations } from "next-intl";
 
-const ServicesPage = async () => {
-  const t = await getTranslations("ServicesPage");
+const ServicesPage = () => {
+  const t = useTranslations("ServicesPage");
 
   return (
     <>

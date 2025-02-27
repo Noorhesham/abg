@@ -28,24 +28,91 @@ import { BusinessConsultant } from "../components/Business";
 import Counter from "../components/Counter";
 import { getTranslations } from "next-intl/server";
 
-const softwareServices = [
-  { icon: <Smartphone />, label: "Mobile Development" },
-  { icon: <Globe />, label: "Website Development" },
-  { icon: <Palette />, label: "UI/UX" },
-  { icon: <Brain />, label: "AI/BI" },
-  { icon: <TestTube2 />, label: "Testing" },
-  { icon: <BarChart3 />, label: "Data Analysis" },
-];
-
-const marketingServices = [
-  { icon: <Megaphone />, label: "RepIn (S.F.A)" },
-  { icon: <Share2 />, label: " Shipping" },
-  { icon: <Target />, label: "Affliate" },
-  { icon: <Palette />, label: "CRM" },
-];
-
 export default async function Home() {
   const t = await getTranslations();
+
+  const softwareServices = [
+    { icon: <Smartphone />, label: t("services.software.mobile") },
+    { icon: <Globe />, label: t("services.software.website") },
+    { icon: <Palette />, label: t("services.software.uiux") },
+    { icon: <Brain />, label: t("services.software.aibi") },
+    { icon: <TestTube2 />, label: t("services.software.testing") },
+    { icon: <BarChart3 />, label: t("services.software.dataAnalysis") },
+  ];
+
+  const marketingServices = [
+    { icon: <Megaphone />, label: t("services.marketing.repin") },
+    { icon: <Share2 />, label: t("services.marketing.shipping") },
+    { icon: <Target />, label: t("services.marketing.affiliate") },
+    { icon: <Palette />, label: t("services.marketing.crm") },
+  ];
+
+  const softwareProjects = [
+    {
+      id: 1,
+      title: t("projects.software.basketball.title"),
+      description: t("projects.software.basketball.description"),
+      video: "/basketball website & app.mp4",
+    },
+    {
+      id: 2,
+      title: t("projects.software.delivertto.title"),
+      description: t("projects.software.delivertto.description"),
+      video: "/delivretto.mp4",
+    },
+    {
+      id: 3,
+      title: t("projects.software.elshawa.title"),
+      description: t("projects.software.elshawa.description"),
+      video: "/shawwa.mp4",
+    },
+    {
+      id: 4,
+      title: t("projects.software.ugmedical.title"),
+      description: t("projects.software.ugmedical.description"),
+      video: "/ug website and mobile app.mp4",
+    },
+    {
+      id: 5,
+      title: t("projects.software.zagel.title"),
+      description: t("projects.software.zagel.description"),
+      video: "/zajel 00.mp4",
+    },
+  ];
+
+  const marketingProjects = [
+    {
+      id: 1,
+      title: t("projects.marketing.basketball.title"),
+      description: t("projects.marketing.basketball.description"),
+      video: "/basketball website & app.mp4",
+    },
+    {
+      id: 2,
+      title: t("projects.marketing.delivertto.title"),
+      description: t("projects.marketing.delivertto.description"),
+      video: "/delivretto.mp4",
+    },
+    {
+      id: 3,
+      title: t("projects.marketing.elshawa.title"),
+      description: t("projects.marketing.elshawa.description"),
+      video: "/shawwa.mp4",
+    },
+    {
+      id: 4,
+      title: t("projects.marketing.ugmedical.title"),
+      description: t("projects.marketing.ugmedical.description"),
+      video: "/ug website and mobile app.mp4",
+    },
+    {
+      id: 5,
+      title: t("projects.marketing.zagel.title"),
+      description: t("projects.marketing.zagel.description"),
+      video: "/zajel 00.mp4",
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-[#1E2756]">
       <div></div>
@@ -61,16 +128,12 @@ export default async function Home() {
           <div className="space-y-8 ">
             <div className="space-y-4">
               <h1 className="text-5xl font-bold text-white">
-                Take Your Brand To
+                {t("hero.title.part1")}
                 <br />
-                The <span className="text-yellow-400">Next Level</span>
+                {t("hero.title.part2")} <span className="text-yellow-400">{t("hero.title.highlight")}</span>
               </h1>
 
-              <p className="text-gray-300 leading-relaxed max-w-xl">
-                ABG is an acclaimed digital marketing, media production agency and powerhouse in software development
-                with a reputation for both effective marketing strategies, solutions, the use of digitalization, and
-                software development with headquarter in Cairo-Egypt.
-              </p>
+              <p className="text-gray-300 leading-relaxed max-w-xl">{t("hero.description")}</p>
             </div>
 
             <ConsultationForm />
@@ -87,112 +150,42 @@ export default async function Home() {
       <ClientSlider />
 
       <ServicesSection
-        title="Software Development"
-        subtitle="SERVICES"
-        description="Bring your business to customers within arm's reach. We create mobile apps with the latest technologies."
+        title={t("sections.software.title")}
+        subtitle={t("sections.software.subtitle")}
+        description={t("sections.software.description")}
         services={softwareServices}
       />
-      <ProjectsSection
-        title="SAAS Products"
-        projects={[
-          {
-            id: 1,
-            title: "Egyptian basketball",
-            description:
-              "Follow the latest Egyptian basketball news through the 'Egyptian Basketball Federation' application",
-            video: "/basketball website & app.mp4",
-          },
-          {
-            id: 2,
-            title: "DELIVERTTO APP",
-            description: "Delivertto is the first app of its kind in Delta and soon across the Republic",
-            video: "/delivretto.mp4",
-          },
-          {
-            id: 3,
-            title: "El-shawa website",
-            description: "El-shawa website is an online marketplace where you can find all home needs",
-            video: "/shawwa.mp4",
-          },
-          {
-            id: 4,
-            title: "UG medical",
-            description: "Online marketplace for specialized biochemical materials",
-            video: "/ug website and mobile app.mp4",
-          },
-          {
-            id: 5,
-            title: "Zagel App",
-            description: "Bring your business to customers within arm's reach",
-            video: "/zajel 00.mp4",
-          },
-        ]}
-      />
+      <ProjectsSection title={t("sections.softwareProjects.title")} projects={softwareProjects} />
       <SectionDivider
-        title="Explore our"
-        highlightedText="Software Solutions"
-        description="We build cutting-edge software solutions that help businesses transform their digital presence and streamline operations."
+        title={t("divider.software.title")}
+        highlightedText={t("divider.software.highlight")}
+        description={t("divider.software.description")}
         Icon={<Code2 />}
       />
       <ServicesSection
-        title="SAAS Products"
-        subtitle="MARKETING"
-        description="Bring your business to customers within arm’s reach. We create mobile apps with the
-          latest
-          technologies."
+        title={t("sections.saas.title")}
+        subtitle={t("sections.saas.subtitle")}
+        description={t("sections.saas.description")}
         services={marketingServices}
         bgColor="bg-[#162042]"
       />
       <SectionDivider
-        title="Discover our"
-        highlightedText="SAAS Products"
-        description="Powerful software-as-a-service solutions designed to enhance your business efficiency and growth."
+        title={t("divider.saas.title")}
+        highlightedText={t("divider.saas.highlight")}
+        description={t("divider.saas.description")}
         Icon={<MegaphoneIcon />}
       />
       <ProjectsSection
-        title="SAAS Products"
-        projects={[
-          {
-            id: 1,
-            title: "Egyptian basketball",
-            description: "Digital marketing campaign for Egyptian Basketball Federation",
-            video: "/basketball website & app.mp4",
-          },
-          {
-            id: 2,
-            title: "DELIVERTTO APP",
-            description: "Social media marketing and brand awareness campaign",
-            video: "/delivretto.mp4",
-          },
-          {
-            id: 3,
-            title: "El-shawa website",
-            description: "Complete digital marketing solution for e-commerce platform",
-            video: "/shawwa.mp4",
-          },
-          {
-            id: 4,
-            title: "UG medical",
-            description: "B2B marketing strategy and implementation",
-            video: "/ug website and mobile app.mp4",
-          },
-          {
-            id: 5,
-            title: "Zagel App",
-            description: "App store optimization and user acquisition campaign",
-            video: "/zajel 00.mp4",
-          },
-        ]}
+        title={t("sections.marketingProjects.title")}
+        projects={marketingProjects}
         bgColor="bg-[#162042]"
-        buttonText="View Marketing Portfolio"
+        buttonText={t("buttons.viewMarketingPortfolio")}
       />
       <section className=" bg-white">
         <MaxWidthWrapper className="flex flex-col gap-4 items-center">
-          <h2 className=" text-yellow-400 font-semibold text-3xl">SERVICES</h2>
-          <h3 className=" text-black font-semibold text-4xl">Food Code Community</h3>
-          <p className=" text-lg">
-            Reach to 320K of our Facebook page follows and engage with a community of 6.5M member in our Facebook group
-          </p>
+          <h2 className=" text-yellow-400 font-semibold text-3xl">{t("foodCode.subtitle")}</h2>
+          <h3 className=" text-black font-semibold text-4xl">{t("foodCode.title")}</h3>
+          <p className=" text-lg">{t("foodCode.description")}</p>
           <img src="/food-cod (1).png" className=" w-full h-[34rem] object-contain" alt="" />
           <Counter />
         </MaxWidthWrapper>
