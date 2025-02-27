@@ -228,5 +228,78 @@
         "suffix": "M"
       }
     }
+  },
+  "about": {
+    "title": "ABOUT US",
+    "subtitle": "We have over 10 years experience!",
+    "description": "ABG is an inter-regional software house and digital marketing consulting agency based in Cairo, Egypt. In cooperated in 2015, ABG is well established credible, and integrated company",
+    "stats": {
+      "projects": {
+        "count": "560+",
+        "label": "Successfully Project"
+      },
+      "growth": {
+        "count": "560+",
+        "label": "Successfully Project"
+      },
+      "awards": {
+        "count": "560+",
+        "label": "Successfully Project"
+      },
+      "clients": {
+        "count": "560+",
+        "label": "Successfully Project"
+      }
+    }
+  },
+  "mission": {
+    "sections": {
+      "mission": {
+        "title": "Our Mission",
+        "heading": "to propose digital marketing strategies and digitalization",
+        "content": "and the use of digital services to affiliate our clients' goals and to avoid or minimize the risks that might affect our clients' operations"
+      },
+      "vision": {
+        "title": "Our Vision",
+        "heading": "Our vision",
+        "content": "The Artificial Business Gate's vision is to use the power of digitalization in empowering all businesses of all sizes on their journey of digital transformation. To reach the bright future by our vision and your ambition"
+      },
+      "value": {
+        "title": "Our Added Value",
+        "heading": "Added Value",
+        "content": "in the digital marketing solutions and software industry is based on our approach"
+      }
+    }
+  },
+  "careers": {
+    "title": "CAREERS",
+    "subtitle": "Work And Grow In Team With A Global Mindset.",
+    "currentOpenings": {
+      "title": "Current Opening",
+      "description": "Since 2006, abc has delivered excellence in digital services and has become one of Egyptian leading software houses. Abc develops and designs web, mobile and eCommerce projects and helps both small startups and world-leading digital companies build products, grow their online business, and scale their workforce globally."
+    },
+    "categories": {
+      "all": "All",
+      "digitalMarketing": "Digital marketing",
+      "development": "Development",
+      "qa": "QA",
+      "business": "Business"
+    },
+    "search": {
+      "placeholder": "Search for job .."
+    },
+    "noJobs": "not available for now!"
+  },
+  "foodCodePage": {
+    "header": {
+      "subtitle": "SERVICES",
+      "title": "Food Code Community",
+      "description": "Reach to 320K of our Facebook page follows and engage with a community of 6.5M member in our Facebook group"
+    },
+    "images": {
+      "header": "Header Image",
+      "background": "Background Header",
+      "foodCode": "Food Code"
+    }
   }
 }

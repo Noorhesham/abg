@@ -3,26 +3,9 @@
 import { motion } from "framer-motion";
 import { Plus } from "lucide-react";
 import MaxWidthWrapper from "./MaxWidthWrapper";
+import { useTranslations } from "next-intl";
 
-const sections = [
-  {
-    title: "Our Mission",
-    heading: "to propose digital marketing strategies and digitalization",
-    content:
-      "and the use of digital services to affiliate our clients' goals and to avoid or minimize the risks that might affect our clients' operations",
-  },
-  {
-    title: "Our Vision",
-    heading: "Our vision",
-    content:
-      "The Artificial Business Gate's vision is to use the power of digitalization in empowering all businesses of all sizes on their journey of digital transformation. To reach the bright future by our vision and your ambition",
-  },
-  {
-    title: "Our Added Value",
-    heading: "Added Value",
-    content: "in the digital marketing solutions and software industry is based on our approach",
-  },
-];
+const sections = [{ key: "mission" }, { key: "vision" }, { key: "value" }];
 
 const circleVariants = {
   hidden: { scale: 0, opacity: 0 },
@@ -50,13 +33,15 @@ const contentVariants = {
 };
 
 export function MissionVision() {
+  const t = useTranslations("mission.sections");
+
   return (
     <MaxWidthWrapper className="">
-      <div className="container mx-auto ">
+      <div className="container mx-auto">
         <div className="space-y-24">
           {sections.map((section, index) => (
             <motion.div
-              key={section.title}
+              key={section.key}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
@@ -89,14 +74,14 @@ export function MissionVision() {
                   variants={contentVariants}
                   className="absolute -bottom-14 text-center left-0 text-xl font-bold text-[#1B224B]"
                 >
-                  {section.title}
+                  {t(`${section.key}.title`)}
                 </motion.h3>
               </div>
 
               {/* Content */}
               <motion.div variants={contentVariants} className="flex-1 space-y-4">
-                <h2 className="text-3xl font-bold text-[#1B224B]">{section.heading}</h2>
-                <p className="text-gray-600 leading-relaxed">{section.content}</p>
+                <h2 className="text-3xl font-bold text-[#1B224B]">{t(`${section.key}.heading`)}</h2>
+                <p className="text-gray-600 leading-relaxed">{t(`${section.key}.content`)}</p>
               </motion.div>
             </motion.div>
           ))}
