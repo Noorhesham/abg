@@ -97,15 +97,15 @@ export function ProjectsSection({
           <div className="h-[1px] bg-gray-700 flex-1" />
         </div>
 
-        <div className="grid grid-cols-12 gap-6 mb-12">
-          <div className="col-span-3 flex flex-col gap-4">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-12">
+          <div className="lg:col-span-3 flex flex-col gap-4">
             <VideoCard project={projects[0]} />
             <VideoCard project={projects[1]} />
           </div>
-          <div className="col-span-6 flex flex-col">
+          <div className="lg:col-span-6 flex flex-col">
             <VideoCard className="h-full" project={projects[2]} />
           </div>
-          <div className="col-span-3 flex flex-col gap-4">
+          <div className="lg:col-span-3 flex flex-col gap-4">
             <VideoCard project={projects[3]} />
             <VideoCard project={projects[4]} />
           </div>

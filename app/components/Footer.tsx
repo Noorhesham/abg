@@ -12,13 +12,13 @@ import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 
 const siteMap = {
-  "mainLinks": [
+  mainLinks: [
     { label: "Home", href: "/" },
     { label: "Who We Are", href: "/about" },
     { label: "Services", href: "/services" },
     { label: "Portfolio", href: "/portfolio" },
   ],
-  "ourServices": [
+  ourServices: [
     { label: "Career", href: "/career" },
     { label: "Contact Us", href: "/contact" },
     { label: "Solutions", href: "/solutions" },
@@ -69,7 +69,7 @@ export function Footer() {
               transition={{ delay: columnIndex * 0.1 }}
               className="space-y-6"
             >
-              <h3 className="text-lg font-semibold">{t(section)}</h3>
+              <h3 className="text-lg font-semibold">{t(`sections.${section}.title`)}</h3>
               <ul className="space-y-3">
                 {links.map((link, index) => (
                   <motion.li
@@ -79,7 +79,7 @@ export function Footer() {
                     transition={{ delay: columnIndex * 0.1 + index * 0.05 }}
                   >
                     <Link href={link.href} className="text-gray-400 hover:text-white transition-colors inline-block">
-                      {t(`footer.nav.${link.label}`)}
+                      {t(`sections.${section}.items.${link.label}`)}
                     </Link>
                   </motion.li>
                 ))}
@@ -119,9 +119,7 @@ export function Footer() {
       <MaxWidthWrapper noPadding className="border-t border-white/10">
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-gray-400">
-              {t("copyright", { year: new Date().getFullYear() })}
-            </p>
+            <p className="text-sm text-gray-400">{t("copyright", { year: new Date().getFullYear() })}</p>
             <div className="flex items-center gap-6">
               <Link href="/privacy" className="text-sm text-gray-400 hover:text-white transition-colors">
                 {t("links.privacy")}
